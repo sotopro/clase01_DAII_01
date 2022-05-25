@@ -5,5 +5,7 @@ fun main() {
     val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
     println(coffee)
     println(info)
-
+    val simpleCoffeeMachine = CoffeeMachine(2000.0, "Black")
+    val coffe2 = simpleCoffeeMachine.makeCoffee("Espresso")
+    print(coffe2)
 }

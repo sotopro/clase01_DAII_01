@@ -8,6 +8,4 @@ class PremiumCoffeeMachine (
     override fun makeCoffee(type: String): String {
         return "Your $type is Ready"
     }
-
-
 }
