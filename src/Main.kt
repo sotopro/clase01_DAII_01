@@ -1,11 +1,20 @@
+class App: DownloadListener {
+    override fun onDownloadStarted() {
+        println("Download started")
+    }
 
+    override fun onDownloadComplete(file: String) {
+        println("$file downloaded")
+    }
+
+    override fun onProgressUpdate(progress: Int) {
+        println("$progress% downloaded")
+    }
+
+}
 fun main() {
-    val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
-    val info = coffeeMachine.machineInfo();
-    val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
-    println(coffee)
-    println(info)
-    val simpleCoffeeMachine = CoffeeMachine(2000.0, "Black")
-    val coffe2 = simpleCoffeeMachine.makeCoffee("Espresso")
-    print(coffe2)
+    val downloaderListener = App()
+    val downloader = Downloader()
+    downloader.downloadListener = downloaderListener
+    downloader.downloadFile("newSong.mp3")
 }
