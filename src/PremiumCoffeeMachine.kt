@@ -9,8 +9,5 @@ class PremiumCoffeeMachine (
         return "Your $type is Ready"
     }
 
-    override fun machineInfo(): String {
-        return super.machineInfo()
-    }
 
 }

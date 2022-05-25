@@ -5,7 +5,7 @@ abstract class BaseCoffeeMachine(
     abstract val brand : String
     abstract fun makeCoffee(type: String) : String
 
-    open fun machineInfo() : String {
+    fun machineInfo() : String {
         return "Coffee Machine Details:\n" +
                 "Brand: $brand\n" +
                 "Color: $color\n" +
