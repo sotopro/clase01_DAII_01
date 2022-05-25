@@ -1,18 +1,24 @@
+data class Person(
+    val id: String,
+    val fistName: String,
+    val lastName: String,
+    val country: String
+) {
+    fun getName() = "$fistName $lastName"
+}
 
 fun main() {
-    val downloader = Downloader()
-    downloader.downloadListener = object : DownloadListener {
-        override fun onDownloadStarted() {
-            println("Download started")
-        }
+    val person = Person("1", "Daniel", "Soto","Perú")
+    val person1 = Person("1", "Daniel", "Soto",  "Perú")
+    println(person == person1)
+    println(person.getName())
 
-        override fun onDownloadComplete(file: String) {
-            println("$file downloaded")
-        }
+//    //componentN
+//    println(person.component1())
+//    println(person.component2())
+//    println(person.component3())
+//    println(person.component4())
 
-        override fun onProgressUpdate(progress: Int) {
-            println("$progress% downloaded")
-        }
-    }
-    downloader.downloadFile("newSong.mp3")
+    val (id, fistName, lastName, country) = person // destructuring declaration
+    println("$id $fistName $lastName $country")
 }
